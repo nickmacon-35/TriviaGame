@@ -1,6 +1,8 @@
 var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
+var number = 10;
+var intervalId;
 
     var myQuestions = [
     {
@@ -62,8 +64,42 @@ var submitButton = document.getElementById('submit');
         `<div class="question"> ${currentQuestion.question} </div>
         <div class="answers"> ${answers.join('')} </div>`
       );
-    }
-    );
+    
+      function run() {
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 1000);
+      }
+  
+      //  The decrement function.
+      function decrement() {
+  
+        //  Decrease number by one.
+        number--;
+  
+        //  Show the number in the #show-number tag.
+        $("#show-number").html("<h2>" + number + "</h2>");
+  
+  
+        //  Once number hits zero...
+        if (number === 0) {
+  
+          //  ...run the stop function.
+          stop();
+          showResults();
+  
+          //  Alert the user that time is up.
+          alert("Time Up!");
+        }
+      }
+      function stop() {
+
+        //  Clears our intervalId
+        //  We just pass the name of the interval
+        //  to the clearInterval function.
+        clearInterval(intervalId);
+      }
+    run();
+    });
 
   // finally combine our output list into one string of HTML and put it on the page
   quizContainer.innerHTML = output.join('');
@@ -72,18 +108,18 @@ var submitButton = document.getElementById('submit');
     function showResults(){
 
       // gather answer containers from our quiz
-      const answerContainers = quizContainer.querySelectorAll('.answers');
+      var answerContainers = quizContainer.querySelectorAll('.answers');
     
       // keep track of user's answers
-      let numCorrect = 0;
+      var numCorrect = 0;
     
       // for each question...
       myQuestions.forEach( (currentQuestion, questionNumber) => {
     
         // find selected answer
-        const answerContainer = answerContainers[questionNumber];
-        const selector = 'input[name=question'+questionNumber+']:checked';
-        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+        var answerContainer = answerContainers[questionNumber];
+        var selector = 'input[name=question'+questionNumber+']:checked';
+        var userAnswer = (answerContainer.querySelector(selector) || {}).value;
     
         // if answer is correct
         if(userAnswer===currentQuestion.correctAnswer){
