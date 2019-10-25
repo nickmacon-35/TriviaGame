@@ -1,7 +1,7 @@
 var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
-var number = 21;
+var number = 35;
 var intervalId;
 
     var myQuestions = [
