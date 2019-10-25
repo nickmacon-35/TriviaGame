@@ -1,0 +1,39 @@
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 960px;
+    height: 960px;
+    background: rgb(27, 206, 38);
+}
+
+h1, h2, #show-number, #quiz, #results {
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    color: #0a0c0c;
+    text-align: center;
+}
+
+.question {
+    position: relative;
+    padding: 20px;
+    background: rgb(155, 221, 155);
+    margin-top: 20px;
+}
+
+.answers {
+    position: relative;
+    padding: 20px;
+    background: rgb(155, 221, 155);
+    margin-bottom: 20px;
+}
+
+#submit {
+    position: relative;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    padding: 20px;
+    margin: 20px;
+    color: #FFF;
+    background: #0a0c0c;
+    font-size: 15px;
+    text-decoration: none;
+    left: 41%;
+  }

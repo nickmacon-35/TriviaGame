@@ -1,42 +1,63 @@
 var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
-var number = 10;
+var number = 21;
 var intervalId;
 
     var myQuestions = [
     {
-      question: "Who is the strongest?",
+      question: "What is my favorite show?",
       answers: {
-        a: "Superman",
-        b: "The Terminator",
-        c: "Waluigi, obviously"
-      },
-      correctAnswer: "c"
-    },
-    {
-      question: "What is the best site ever created?",
-      answers: {
-        a: "SitePoint",
-        b: "Simple Steps Code",
-        c: "Trick question; they're both the best"
-      },
-      correctAnswer: "c"
-    },
-    {
-      question: "Where is Waldo really?",
-      answers: {
-        a: "Antarctica",
-        b: "Exploring the Pacific Ocean",
-        c: "Sitting in a tree",
-        d: "Minding his own business, so stop asking"
+        a: "Family Guy",
+        b: "Game of Thrones",
+        c: "Breaking Bad",
+        d: "Jojo's Bizarre Adventure"
       },
       correctAnswer: "d"
+    },
+    {
+      question: "What is my preferred gaming system?",
+      answers: {
+        a: "Playstation",
+        b: "Xbox",
+        c: "PC",
+        d: "Nintendo"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "I mainly play which position in the game Overwatch",
+      answers: {
+        a: "Tank",
+        b: "Damage",
+        c: "Support",
+        d: "All of the Above"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Which Country have I not been to",
+      answers: {
+        a: "Germany",
+        b: "Canada",
+        c: "Japan",
+        d: "England"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "What type of company have I not worked for",
+      answers: {
+        a: "Bank",
+        b: "Law Firm",
+        c: "Oil & Gas",
+        d: "Bowling Ball Manufacturer"
+      },
+      correctAnswer: "c"
     }
   ];
 
   function buildQuiz(){
-    // we'll need a place to store the HTML output
     var output = [];
   
     // for each question...
@@ -77,7 +98,7 @@ var intervalId;
         number--;
   
         //  Show the number in the #show-number tag.
-        $("#show-number").html("<h2>" + number + "</h2>");
+        $("#show-number").html("<h2>Seconds Left: " + number + "</h2>");
   
   
         //  Once number hits zero...
@@ -126,8 +147,8 @@ var intervalId;
           // add to the number of correct answers
           numCorrect++;
     
-          // color the answers green
-          answerContainers[questionNumber].style.color = 'lightgreen';
+          // color the answers blue
+          answerContainers[questionNumber].style.color = 'blue';
         }
         // if answer is wrong or blank
         else{
