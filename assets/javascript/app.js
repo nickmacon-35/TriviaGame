@@ -1,7 +1,7 @@
 var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
-var number = 35;
+var number = 30;
 var intervalId;
 
     var myQuestions = [
@@ -26,7 +26,7 @@ var intervalId;
       correctAnswer: "a"
     },
     {
-      question: "I mainly play which position in the game Overwatch",
+      question: "I mainly play which position in the game Overwatch?",
       answers: {
         a: "Tank",
         b: "Damage",
@@ -36,7 +36,7 @@ var intervalId;
       correctAnswer: "a"
     },
     {
-      question: "Which Country have I not been to",
+      question: "Which Country have I not been to?",
       answers: {
         a: "Germany",
         b: "Canada",
@@ -46,7 +46,7 @@ var intervalId;
       correctAnswer: "c"
     },
     {
-      question: "What type of company have I not worked for",
+      question: "What type of company have I not worked for?",
       answers: {
         a: "Bank",
         b: "Law Firm",
@@ -100,9 +100,16 @@ var intervalId;
         //  Show the number in the #show-number tag.
         $("#show-number").html("<h2>Seconds Left: " + number + "</h2>");
   
-  
+        //  Stop the timer if the the user clicks submit.
+        if (number > 0) {
+          $("#submit").on("click", function() {
+          stop();
+          showResults();
+          });
+        }
+
         //  Once number hits zero...
-        if (number === 0) {
+        else if (number === 0) {
   
           //  ...run the stop function.
           stop();
